@@ -1,0 +1,71 @@
+'use strict';
+
+// const fs = require('fs');
+
+// process.stdin.setEncoding('utf-8');
+
+// let inputString = '';
+// let currentLine = 0;
+
+// process.stdin.on('data', inputStdin => {
+//     inputString += inputStdin;
+// }); 
+
+// process.stdin.on('end', _ => {
+//    console.log(inputString);
+// //    process.stdin.pause();
+//     main();
+// });
+
+// function readLine() {
+//     console.log("inside read line", inputString);
+//     return inputString[currentLine++];
+// }
+
+// function main() {
+//     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+//     console.log("in main. input is ", input);
+//     var input = readLine();
+//     console.log("in main. input is ", input);
+
+    
+// }
+
+
+
+
+
+
+
+
+
+// const readline = require('readline');
+
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
+
+// rl.question('What do you think of Node.js? ', (answer) => {
+//   // TODO: Log the answer in a database
+//   console.log(`Thank you for your valuable feedback: ${answer}`);
+
+//   rl.close();
+// });
+
+
+
+
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('readable', () => {
+  const chunk = process.stdin.read();
+  if (chunk !== null) {
+    process.stdout.write(`data: ${chunk}`);
+  }
+});
+
+process.stdin.on('end', () => {
+  process.stdout.write('end');
+});
+
